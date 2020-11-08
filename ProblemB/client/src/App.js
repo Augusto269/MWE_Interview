@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import ProtectedRoutes from "./Utils/Routers/ProtectedRoutes";
+import { Language } from "./Utils/Context/Context";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+import Home from './views/Home/Home'
+import Login from './views/Login/Login'
+
+
 
 function App() {
+  const [lang, setLang] = useState("es");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+        <Language.Provider value={{ lang, setLang }}>
+          <Router>
+            <Switch>
+              <ProtectedRoutes path="/" exact component={Home} />
+              <ProtectedRoutes path="/home" component={Home} />
+              <ProtectedRoutes path="/auth" component={Login} />
+            </Switch>
+          </Router>
+        </Language.Provider>
+    </>
   );
 }
 
 export default App;
+
