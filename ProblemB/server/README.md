@@ -14,6 +14,7 @@
 - UnitTest and Integration Test
 - Migrations
 - Lint
+- Hide .env, for development reasons since the product will not be functional, it is left as an example
 
 # How to run it? 
 - npm install (to install the modules)
