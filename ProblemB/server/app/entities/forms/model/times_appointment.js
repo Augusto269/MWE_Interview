@@ -26,6 +26,9 @@ module.exports = function (sequelize, DataTypes) {
         },
         delete: {
             type: DataTypes.BOOLEAN
+        },
+        appointment_per_hour:{
+            type :DataTypes.INTEGER
         }
     }, {
         tableName: 'times_appointment',
