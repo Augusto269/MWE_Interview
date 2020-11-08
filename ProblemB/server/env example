@@ -1,0 +1,9 @@
+      HOST_DB= 'ec2-54-86-57-171.compute-1.amazonaws.com'
+      PORT_DB= 5432
+      APP_VERSION= 1.0
+      DB= 'd4f6q569qhjh3b'
+      USER= 'ylwtslocvnovpe'
+      PASSWORD= '4c0e421902a6d50ac9cd752212a4057d59ea566e67c2c0eeb86a876ce4b0050b'
+      TOKEN_TIME_SET= 3000
+      SECRET_PASSWORD_TOKEN= MEWSECRET-PASSWORD
+

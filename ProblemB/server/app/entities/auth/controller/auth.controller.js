@@ -28,7 +28,6 @@ exports.makeLogin = async function (req, res) {
                 break;
               default:
                 throw new Error("Profile not found");
-                break;
             }
             let payload = {};
             result.first_login
