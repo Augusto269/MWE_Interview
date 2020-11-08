@@ -1,0 +1,23 @@
+{
+  "name": "problema_a",
+  "version": "1.0.0",
+  "description": "resolution of the exercise a",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "mocha"
+  },
+  "author": "Augusto Godoy",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.18.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "tedious": "^3.0.1",
+    "chai": "*",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.5.0"
+  }
+}
