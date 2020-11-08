@@ -55,14 +55,14 @@ exports.getAllProfiles = function(id_profile,description,show) {
     let whereClause = {};
     let allProfiles = []
     if(description) {whereClause["description"] = description;}
-    if(id_profile) {whereClause["UUID_profile"] = id_profile;}
-    if(show){whereClause["show"] = 1;}
+    if(id_profile) {whereClause["UUID_Profile"] = id_profile;}
+    console.log(whereClause);
     return dataManager.profiles.findAll({
         where: whereClause
     }).then(result => {
         result.forEach(result_profile => {
             Aprofile={
-                UUID_profile: result_profile.dataValues.UUID_profile,
+                UUID_profile: result_profile.dataValues.UUID_Profile,
                 description: result_profile.dataValues.profile_name,
             }
             allProfiles.push(Aprofile)

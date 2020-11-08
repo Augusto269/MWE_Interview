@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING(36),  
         },
         DNI: {
-            type: DataTypes.INTEGER(15),  
+            type: DataTypes.INTEGER,  
         },
         phone: {
             type: DataTypes.STRING(36),  

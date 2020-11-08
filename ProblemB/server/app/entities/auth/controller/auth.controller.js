@@ -18,13 +18,15 @@ exports.makeLogin = async function (req, res) {
           let hashedPassword = await commonsController.comparePassword(result.password,makeLogin.pass);
           if (hashedPassword) {
             // Login Successfully
+            console.log(result.profile);
             let profile = await serviceForms.getAllProfiles(result.profile)
+            console.log(profile);
             switch (profile[0].description) {
-              case 'User':
+              case 'user':
                 var asignedProfile = process.env.USESR;
                 break;
-              case 'Super':
-                var asignedProfile = process.env.SUPER;
+              case 'admin':
+                var asignedProfile = process.env.ADMIN;
                 break;
               default:
                 throw new Error("Profile not found");
@@ -157,27 +159,12 @@ exports.renewtoken = function (uuid, language) {
   return userService.getUser(uuid)
     .then(async result => {
       let profile = await serviceForms.getAllProfiles(result.profile)
-      switch (profile[0].description) {
-        case 'RealState':
-          var asignedProfile = process.env.REALSTATE;
-          break;
-        case 'Administrador':
+      switch (profile[0].description) {      
+        case 'admin':
           var asignedProfile = process.env.ADMINSTRADOR;
-          break;
-        case 'Proveedor':
-          var asignedProfile = process.env.PROVEEDOR;
-          break;
-        case 'Super':
-          var asignedProfile = process.env.SUPER;
-          break;
-        case 'Control':
-          var asignedProfile = process.env.CONTROL;
-          break;
-        case 'OwnerUnity':
-          var asignedProfile = process.env.OWNERUNITY;
-          break;
-        case 'Tenant':
-          var asignedProfile = process.env.TENANT;
+          break;       
+        case 'user':
+          var asignedProfile = process.env.USER;
           break;
         default:
           var asignedProfile = 'NaN';
@@ -247,7 +234,7 @@ exports.administratorAuth = function (req, res, next) {
   try {
     let userData = res.locals.userData;
     serviceForms.getAllProfiles(userData.profile).then(resultGetProfile => {
-      if (resultGetProfile[0].description == 'Administrator'||resultGetProfile[0].description == 'Super') {
+      if (resultGetProfile[0].description == 'Super') {
         next()
       } else {
         let errorCode = 4999;
@@ -285,53 +272,11 @@ exports.administratorAuth = function (req, res, next) {
     });
   }
 }
-exports.providerAuth = function (req, res, next) {
+exports.userAuth = function (req, res, next) {
   try {
     let userData = res.locals.userData;
     serviceForms.getAllProfiles(userData.profile).then(resultGetProfile => {
-      if (resultGetProfile[0].description == 'Proveedor'|| resultGetProfile[0].description == 'Super') {
-        next()
-      } else {
-        let errorCode = 4999;
-        commonsController.error_msg(errorCode, userData.language).then(result => {
-          res.status(200).send({
-            errorcode: errorCode,
-            message: result.message,
-            details: [],
-            result: []
-          });
-        });
-      }
-    }).catch(err => {
-      let errorCode = 500;
-      commonsController.createRegisterError(err, userData.uuid);
-      commonsController.error_msg(errorCode, userData.language).then(result => {
-        res.status(500).send({
-          errorcode: errorCode,
-          message: result.message,
-          result: "",
-          details: ""
-        });
-      });
-    })
-  } catch (err) {
-    let errorCode = 500;
-    commonsController.createRegisterError(err, userData.uuid);
-    commonsController.error_msg(errorCode, userData.language).then(result => {
-      res.status(500).send({
-        errorcode: errorCode,
-        message: result.message,
-        result: "",
-        details: ""
-      });
-    });
-  }
-}
-exports.controlAuth = function (req, res, next) {
-  try {
-    let userData = res.locals.userData;
-    serviceForms.getAllProfiles(userData.profile).then(resultGetProfile => {
-      if (resultGetProfile[0].description == 'Control' || resultGetProfile[0].description == 'Super') {
+      if (resultGetProfile[0].description == 'User' || resultGetProfile[0].description == 'Admin') {
         next()
       } else {
         let errorCode = 4999;

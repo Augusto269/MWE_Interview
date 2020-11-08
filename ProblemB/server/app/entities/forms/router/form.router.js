@@ -2,7 +2,7 @@ const express = require("express");
 const route = express();
 const formsController = require('../controller/form.controller')
 const authController = require('../../auth/controller/auth.controller')
-const formValidation = require('../validation/form.validations')
+const formValidation = require('../validation/form.validation')
 /**
  * @api {get} forms/:CodeForm Get DATA form CodeForm
  * @apiGroup Forms 
