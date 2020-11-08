@@ -1,0 +1,22 @@
+Nodejs tructure:
+                        |-- .git
+                        |-- .vscode
+                        |-- package.json
+                        |-- README.md
+                        |-- app
+                            |-- entities
+                                |-- entite     
+                                    |-- route
+                                        |-- entite.route.js                      
+                                    |-- service
+                                        |-- entite.service.js                      
+                                    |-- controller
+                                        |-- entite.controller.js      
+                                    |-- validator
+                                        |-- entite.validator.js
+                                    |-- model
+                                        |-- entite.model.js
+                        |-- utils
+                            |-- data_manager.js (Manager of models)
+
+This a example for the entities                            

@@ -1,0 +1,39 @@
+{
+  "name": "theforcellcnodejs",
+  "version": "1.0.0",
+  "description": "The force llc Nodejs ",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "sls": "serverless offline -v -s dev",
+    "test": "mocha tests/IT --recursive"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "debug": "~2.6.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.4",
+    "express-rate-limit": "^5.0.0",
+    "express-session": "^1.15.2",
+    "global": "^4.4.0",
+    "ioredis": "^4.3.0",
+    "jwt-simple": "^0.5.6",
+    "moment": "^2.24.0",
+    "mysql": "^2.17.1",
+    "mysql2": "^2.0.0",
+    "raw-body": "^2.4.1",
+    "sequelize": "^5.21.2",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3",
+    "pg": "^4.5.7",
+    "chai": "*",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.5.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
