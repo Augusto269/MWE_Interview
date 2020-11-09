@@ -6,7 +6,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest} 
     render={props => {
-      const token = localStorage.getItem("awesomeToken");    
+      const token = localStorage.getItem("token");    
       console.log(token)  
       if (token) { 
         if(props.location.pathname === "/auth" || props.location.pathname === "/"){ 

@@ -13,7 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Style from './login.style'
 import {loginLanguage} from './login.language'
-
+import {loginService} from '../../services/login/login.service'
+import { useState } from 'react';
 
 function Copyright() {
   return (
@@ -30,8 +31,29 @@ function Copyright() {
 
 const useStyles = makeStyles(Style) ;
 
-export default function Login() {
+export default function Login(props) {
   const classes = useStyles();
+  const [pass,setPass] = useState('');
+  const [user, setUser] = useState('');
+  const [lang, setLang] = useState('en')
+
+  const loginHandler = async (e) => {
+      e.preventDefault();
+      const loginResponse = await loginService(user, pass, lang)
+      if (loginResponse.errorcode === 2000) {
+        await localStorage.setItem("token", loginResponse.result);
+        props.history.push("/home/", "Auth"); // Changed the route
+      } else {       
+        localStorage.removeItem("token");
+      }
+  }
+  const passHandler = (e) =>{
+    setPass(e.target.value)
+  }
+  const userHandler = (e) => {
+    setUser(e.target.value)
+  }
+  
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -59,6 +81,8 @@ export default function Login() {
               name="email"
               autoComplete="email"
               autoFocus
+              value = {user}
+              onChange = {userHandler}
             />
             <TextField
               variant="outlined"
@@ -70,6 +94,8 @@ export default function Login() {
               type="password"
               id="password"
               autoComplete="current-password"
+              value = {pass}
+              onChange = {passHandler}
             />
             <Button
               type="submit"
@@ -77,6 +103,7 @@ export default function Login() {
               variant="contained"
               color="primary"
               className={classes.submit}
+              onClick= {loginHandler}
             >
              {loginLanguage.sigIn}
             </Button>
@@ -87,5 +114,6 @@ export default function Login() {
         </div>
       </Grid>
     </Grid>
+    
   );
 }
