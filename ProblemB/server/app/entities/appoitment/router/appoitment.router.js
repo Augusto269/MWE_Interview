@@ -84,7 +84,7 @@ route.get("/calenders/:AppoitmentKey/:date",authController.securityMiddleware , 
  * @apiError {412} Errorcode:412  message: errorValidation
  * @apiError {500} Errorcode:500  message: Internal Error
  */
-route.post("/calenders/:AppoitmentKey/:date",authController.securityMiddleware )
+//route.post("/calenders/:AppoitmentKey/:date",authController.securityMiddleware  )
 
 /**
  * @api {post} appoitment/:AppoitmentKey Add Register appoinment of the day 
@@ -100,7 +100,7 @@ route.post("/calenders/:AppoitmentKey/:date",authController.securityMiddleware )
  * @apiError {412} Errorcode:412  message: errorValidation
  * @apiError {500} Errorcode:500  message: Internal Error
  */
-route.post("/calenders/:AppoitmentKey/:date",authController.securityMiddleware,authController.administratorAuth, )
+//route.post("/calenders/:AppoitmentKey/:date",authController.securityMiddleware,authController.administratorAuth, )
 
 /**
  * @api {put} appoitment/:AppoitmentKey Updated Register appoinment of the day 
@@ -116,7 +116,7 @@ route.post("/calenders/:AppoitmentKey/:date",authController.securityMiddleware,a
  * @apiError {412} Errorcode:412  message: errorValidation
  * @apiError {500} Errorcode:500  message: Internal Error
  */
-route.put("/calenders/:AppoitmentKey/:date/:id",authController.securityMiddleware )
+//route.put("/calenders/:AppoitmentKey/:date/:id",authController.securityMiddleware )
 
 /**
  * @api {delete} appoitment/:AppoitmentKey Delete Register appoinment of the day 
@@ -132,7 +132,7 @@ route.put("/calenders/:AppoitmentKey/:date/:id",authController.securityMiddlewar
  * @apiError {412} Errorcode:412  message: errorValidation
  * @apiError {500} Errorcode:500  message: Internal Error
  */
-route.delete("/calenders/:AppoitmentKey/:date/:id",authController.securityMiddleware,)
+//route.delete("/calenders/:AppoitmentKey/:date/:id",authController.securityMiddleware,)
 /**
  * @api {delete} appoitment/:AppoitmentKey Delete Register appoinment of the day 
  * @apiGroup Appoitment && Admin
@@ -148,7 +148,7 @@ route.delete("/calenders/:AppoitmentKey/:date/:id",authController.securityMiddle
  * @apiError {412} Errorcode:412  message: errorValidation
  * @apiError {500} Errorcode:500  message: Internal Error
  */
-route.delete("/admin/calenders/:AppoitmentKey/:date/:id",authController.securityMiddleware,authController.administratorAuth, )
+//route.delete("/admin/calenders/:AppoitmentKey/:date/:id",authController.securityMiddleware,authController.administratorAuth, )
 /**
  * @api {put} appoitment/:AppoitmentKey Delete Register appoinment of the day 
  * @apiGroup Appoitment && Admin
@@ -164,4 +164,4 @@ route.delete("/admin/calenders/:AppoitmentKey/:date/:id",authController.security
  * @apiError {412} Errorcode:412  message: errorValidation
  * @apiError {500} Errorcode:500  message: Internal Error
  */
-route.put("/admin/calenders/:AppoitmentKey/:date/:id",authController.securityMiddleware,authController.administratorAuth, )
+//route.put("/admin/calenders/:AppoitmentKey/:date/:id",authController.securityMiddleware,authController.administratorAuth, )

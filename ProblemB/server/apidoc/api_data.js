@@ -114,6 +114,13 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
+            "type": "401",
+            "optional": false,
+            "field": "Errorcode:499",
+            "description": "<p>message: Not Authorized</p>"
+          },
+          {
+            "group": "Error 4xx",
             "type": "400",
             "optional": false,
             "field": "Errorcode:4102",
@@ -139,6 +146,910 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "app/entities/user/router/user.router.js",
     "groupTitle": "Admin_&&_User"
+  },
+  {
+    "type": "post",
+    "url": "appoitment/:AppoitmentKey",
+    "title": "Add Register appoinment of the day",
+    "group": "Appoitment",
+    "name": "Add_Register_appoinment_of_the_day",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "AppointmentKey",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "date",
+            "description": "<p>('DD-MM-YYYY')</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "hour",
+            "description": "<p>('HH:MM')</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "200",
+            "optional": false,
+            "field": "Errrocode:200",
+            "description": "<p>message: Suceffuly</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "401",
+            "optional": false,
+            "field": "Errorcode:4999",
+            "description": "<p>message: Not Authorized</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "400",
+            "optional": false,
+            "field": "Errorcode:4000",
+            "description": "<p>message: Table Appointment not found</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "412",
+            "optional": false,
+            "field": "Errorcode:412",
+            "description": "<p>message: errorValidation</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "500",
+            "optional": false,
+            "field": "Errorcode:500",
+            "description": "<p>message: Internal Error</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/entities/appoitment/router/appoitment.router.js",
+    "groupTitle": "Appoitment"
+  },
+  {
+    "type": "put",
+    "url": "appoitment/:AppoitmentKey",
+    "title": "Updated Register appoinment of the day",
+    "group": "Appoitment",
+    "name": "Add_Register_appoinment_of_the_day",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "AppointmentKey",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "date",
+            "description": "<p>('DD-MM-YYYY')</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "id",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "hour",
+            "description": "<p>('HH:MM')</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "200",
+            "optional": false,
+            "field": "Errrocode:200",
+            "description": "<p>message: Suceffuly</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "401",
+            "optional": false,
+            "field": "Errorcode:4999",
+            "description": "<p>message: Not Authorized</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "400",
+            "optional": false,
+            "field": "Errorcode:4000",
+            "description": "<p>message: Table Appointment not found</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "412",
+            "optional": false,
+            "field": "Errorcode:412",
+            "description": "<p>message: errorValidation</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "500",
+            "optional": false,
+            "field": "Errorcode:500",
+            "description": "<p>message: Internal Error</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/entities/appoitment/router/appoitment.router.js",
+    "groupTitle": "Appoitment"
+  },
+  {
+    "type": "delete",
+    "url": "appoitment/:AppoitmentKey",
+    "title": "Delete Register appoinment of the day",
+    "group": "Appoitment",
+    "name": "Delete_Register_appoinment_of_the_day",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "AppointmentKey",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "date",
+            "description": "<p>('DD-MM-YYYY')</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "hour",
+            "description": "<p>('HH:MM')</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "id",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "200",
+            "optional": false,
+            "field": "Errrocode:200",
+            "description": "<p>message: Suceffuly</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "401",
+            "optional": false,
+            "field": "Errorcode:4999",
+            "description": "<p>message: Not Authorized</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "400",
+            "optional": false,
+            "field": "Errorcode:4000",
+            "description": "<p>message: Table Appointment not found</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "412",
+            "optional": false,
+            "field": "Errorcode:412",
+            "description": "<p>message: errorValidation</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "500",
+            "optional": false,
+            "field": "Errorcode:500",
+            "description": "<p>message: Internal Error</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/entities/appoitment/router/appoitment.router.js",
+    "groupTitle": "Appoitment"
+  },
+  {
+    "type": "get",
+    "url": "appoitment/:AppoitmentKey",
+    "title": "Get All Register appoinment of the day",
+    "group": "Appoitment",
+    "name": "Get_All_Register_appoinment_of_the_day",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "AppointmentKey",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "date",
+            "description": "<p>('DD-MM-YYYY')</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "200",
+            "optional": false,
+            "field": "Errrocode:200",
+            "description": "<p>message: Return array of appoinment of the day</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "401",
+            "optional": false,
+            "field": "Errorcode:4999",
+            "description": "<p>message: Not Authorized</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "400",
+            "optional": false,
+            "field": "Errorcode:4000",
+            "description": "<p>message: Table Appointment not found</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "412",
+            "optional": false,
+            "field": "Errorcode:412",
+            "description": "<p>message: errorValidation</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "500",
+            "optional": false,
+            "field": "Errorcode:500",
+            "description": "<p>message: Internal Error</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/entities/appoitment/router/appoitment.router.js",
+    "groupTitle": "Appoitment"
+  },
+  {
+    "type": "get",
+    "url": "appoitment/",
+    "title": "Get All Table Appoitment",
+    "group": "Appoitment",
+    "name": "Get_Table_all_appoitment",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "200",
+            "optional": false,
+            "field": "Errrocode:200",
+            "description": "<p>message: Array of Table appoitment name</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "500",
+            "optional": false,
+            "field": "Errorcode:500",
+            "description": "<p>message: Internal Error</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/entities/appoitment/router/appoitment.router.js",
+    "groupTitle": "Appoitment"
+  },
+  {
+    "type": "post",
+    "url": "appoitment/:AppoitmentKey",
+    "title": "Add Register appoinment of the day",
+    "group": "Appoitment_&&_Admin",
+    "name": "Add_Register_appoinment_of_the_day",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "AppointmentKey",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "date",
+            "description": "<p>('DD-MM-YYYY')</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "hour",
+            "description": "<p>('HH:MM')</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "User",
+            "description": "<p>(uuid)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "200",
+            "optional": false,
+            "field": "Errrocode:200",
+            "description": "<p>message: Suceffuly</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "401",
+            "optional": false,
+            "field": "Errorcode:4999",
+            "description": "<p>message: Not Authorized</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "400",
+            "optional": false,
+            "field": "Errorcode:4000",
+            "description": "<p>message: Table Appointment not found</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "412",
+            "optional": false,
+            "field": "Errorcode:412",
+            "description": "<p>message: errorValidation</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "500",
+            "optional": false,
+            "field": "Errorcode:500",
+            "description": "<p>message: Internal Error</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/entities/appoitment/router/appoitment.router.js",
+    "groupTitle": "Appoitment_&&_Admin"
+  },
+  {
+    "type": "post",
+    "url": "appoitment/",
+    "title": "Add a Appointment Key",
+    "group": "Appoitment_&&_Admin",
+    "name": "Add_a_Appointment_Key",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "AppointmentKey",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "array",
+            "optional": false,
+            "field": "AppointmentValue",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "array",
+            "optional": false,
+            "field": "appointment_per_hour",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "200",
+            "optional": false,
+            "field": "Errrocode:200",
+            "description": "<p>message: Succefully Add Table Appointment</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "401",
+            "optional": false,
+            "field": "Errorcode:4999",
+            "description": "<p>message: Not Authorized</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "400",
+            "optional": false,
+            "field": "Errorcode:4000",
+            "description": "<p>message: Table Appointment not found</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "412",
+            "optional": false,
+            "field": "Errorcode:412",
+            "description": "<p>message: errorValidation</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "500",
+            "optional": false,
+            "field": "Errorcode:500",
+            "description": "<p>message: Internal Error</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/entities/appoitment/router/appoitment.router.js",
+    "groupTitle": "Appoitment_&&_Admin"
+  },
+  {
+    "type": "delete",
+    "url": "appoitment/:AppoitmentKey",
+    "title": "Delete Register appoinment of the day",
+    "group": "Appoitment_&&_Admin",
+    "name": "Delete_Register_appoinment_of_the_day",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "AppointmentKey",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "date",
+            "description": "<p>('DD-MM-YYYY')</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "hour",
+            "description": "<p>('HH:MM')</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "id",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "User",
+            "description": "<p>(uuid)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "200",
+            "optional": false,
+            "field": "Errrocode:200",
+            "description": "<p>message: Suceffuly</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "401",
+            "optional": false,
+            "field": "Errorcode:4999",
+            "description": "<p>message: Not Authorized</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "400",
+            "optional": false,
+            "field": "Errorcode:4000",
+            "description": "<p>message: Table Appointment not found</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "412",
+            "optional": false,
+            "field": "Errorcode:412",
+            "description": "<p>message: errorValidation</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "500",
+            "optional": false,
+            "field": "Errorcode:500",
+            "description": "<p>message: Internal Error</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/entities/appoitment/router/appoitment.router.js",
+    "groupTitle": "Appoitment_&&_Admin"
+  },
+  {
+    "type": "put",
+    "url": "appoitment/:AppoitmentKey",
+    "title": "Delete Register appoinment of the day",
+    "group": "Appoitment_&&_Admin",
+    "name": "Delete_Register_appoinment_of_the_day",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "AppointmentKey",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "date",
+            "description": "<p>('DD-MM-YYYY')</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "hour",
+            "description": "<p>('HH:MM')</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "id",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "User",
+            "description": "<p>(uuid)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "200",
+            "optional": false,
+            "field": "Errrocode:200",
+            "description": "<p>message: Suceffuly</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "401",
+            "optional": false,
+            "field": "Errorcode:4999",
+            "description": "<p>message: Not Authorized</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "400",
+            "optional": false,
+            "field": "Errorcode:4000",
+            "description": "<p>message: Table Appointment not found</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "412",
+            "optional": false,
+            "field": "Errorcode:412",
+            "description": "<p>message: errorValidation</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "500",
+            "optional": false,
+            "field": "Errorcode:500",
+            "description": "<p>message: Internal Error</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/entities/appoitment/router/appoitment.router.js",
+    "groupTitle": "Appoitment_&&_Admin"
+  },
+  {
+    "type": "delete",
+    "url": "appoitment/:AppoitmentKey",
+    "title": "Delete a Appointment Key",
+    "group": "Appoitment_&&_Admin",
+    "name": "Updated_a_Appointment_Key",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "AppoitmentKey",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "200",
+            "optional": false,
+            "field": "Errrocode:200",
+            "description": "<p>message: Succefully delete Table Appointment</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "401",
+            "optional": false,
+            "field": "Errorcode:4999",
+            "description": "<p>message: Not Authorized</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "400",
+            "optional": false,
+            "field": "Errorcode:4004",
+            "description": "<p>message: Table Appointment not found</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "412",
+            "optional": false,
+            "field": "Errorcode:412",
+            "description": "<p>message: errorValidation</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "500",
+            "optional": false,
+            "field": "Errorcode:500",
+            "description": "<p>message: Internal Error</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/entities/appoitment/router/appoitment.router.js",
+    "groupTitle": "Appoitment_&&_Admin"
+  },
+  {
+    "type": "put",
+    "url": "appoitment/:AppoitmentKey",
+    "title": "Updated a Appointment Key",
+    "group": "Appoitment_&&_Admin",
+    "name": "Updated_a_Appointment_Key",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "AppoitmentKey",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "array",
+            "optional": false,
+            "field": "AppointmentValue",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "array",
+            "optional": false,
+            "field": "appointment_per_hour",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "200",
+            "optional": false,
+            "field": "Errrocode:200",
+            "description": "<p>message: Succefully Updated Table Appointment</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "401",
+            "optional": false,
+            "field": "Errorcode:4999",
+            "description": "<p>message: Not Authorized</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "400",
+            "optional": false,
+            "field": "Errorcode:4004",
+            "description": "<p>message: Table Appointment not found</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "412",
+            "optional": false,
+            "field": "Errorcode:412",
+            "description": "<p>message: errorValidation</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "500",
+            "optional": false,
+            "field": "Errorcode:500",
+            "description": "<p>message: Internal Error</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/entities/appoitment/router/appoitment.router.js",
+    "groupTitle": "Appoitment_&&_Admin"
   },
   {
     "type": "post",

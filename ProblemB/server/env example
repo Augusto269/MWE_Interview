@@ -1,9 +1,10 @@
-      HOST_DB= 'ec2-54-86-57-171.compute-1.amazonaws.com'
-      PORT_DB= 5432
+      HOST_DB= 'us-cdbr-east-02.cleardb.com'
+      PORT_DB= 3306
       APP_VERSION= 1.0
-      DB= 'd4f6q569qhjh3b'
-      USER= 'ylwtslocvnovpe'
-      PASSWORD= '4c0e421902a6d50ac9cd752212a4057d59ea566e67c2c0eeb86a876ce4b0050b'
+      DB= 'heroku_dac327190e82a4c'
+      USER_DB= ba2cb70ae71d92
+      PASSWORD= '4a0fe59c'
       TOKEN_TIME_SET= 3000
       SECRET_PASSWORD_TOKEN= MEWSECRET-PASSWORD
-
+      ADMIN = 8cffd023-79fe-4409-bc67-37d93724c1ef
+      USER = 2be7c9eb-a575-4c93-8863-641fe1ae2a46

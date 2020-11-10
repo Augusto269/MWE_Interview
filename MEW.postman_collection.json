@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "85b23bb0-ffb3-4c12-bbea-12dd9ab9599f",
+		"name": "MEW",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Problema B",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Admin",
+							"item": [
+								{
+									"name": "NewUser",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "1698bbd2-e05d-4932-bec9-3ccedd206e8a",
+												"exec": [
+													"pm.sendRequest({",
+													"    url: 'localhost:3000/api/1.0/auth/',",
+													"    method: 'POST',",
+													"    header: {",
+													"        'content-type': 'application/json',",
+													"    },",
+													"    body: {",
+													"        mode: 'raw',",
+													"        raw: JSON.stringify({ \"user\": \"admin@gmail.com\",\"pass\": \"Augusto.93123\", \"language\": \"en\"})",
+													"    }",
+													"}, function (err, res) {",
+													"        pm.environment.set(\"auth_token\", res.json().result);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"account\": \"user@gmail.com\",\n    \"password\": \"Augusto.93123\",\n    \"name\": \"Augusto\",\n    \"lastname\":\"Godoy\",\n    \"DNI\": 37208505,\n    \"Profile\":\"2be7c9eb-a575-4c93-8863-641fe1ae2a46\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3000/api/1.0/user/admin/newUser",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"1.0",
+												"user",
+												"admin",
+												"newUser"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Login",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "c0631b83-a64a-4692-9bbc-fbac9ec4567e",
+										"exec": [
+											"pm.sendRequest({",
+											"    url: 'localhost:3000/api/1.0/auth/',",
+											"    method: 'POST',",
+											"    header: {",
+											"        'content-type': 'application/json',",
+											"    },",
+											"    body: {",
+											"        mode: 'raw',",
+											"        raw: JSON.stringify({ \"user\": \"user@gmail.com\",\"pass\": \"Augusto.93123\", \"language\": \"en\"})",
+											"    }",
+											"}, function (err, res) {",
+											"        pm.environment.set(\"auth_token\", res.json().result);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": \"user@gmail.com\",\n    \"pass\": \"Augusto.93123\",\n    \"language\": \"en\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/1.0/auth/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"1.0",
+										"auth",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Problem A",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"number_cases\": 3,\n    \"cases\":[\"this is a test\", \"second line\", \"this is the end\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/words",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"words"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

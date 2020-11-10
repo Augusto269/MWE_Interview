@@ -3,6 +3,7 @@
 - The API will be structured in entities, (the structure can be viewed in the "structure" file)
 - A closed login will be performed (only the admin user will be able to do it)
 - All endpoints will be documented in the apiDoc folder, in which the postman will also be found to facilitate use
+- The endpoint to create a user is without any type of security so that a user can be created in a simple way
 - Jwt token will be used to handle the api
 - Endpoints will be used to evaluate the profile (admin and user) to prevent erroneous profiles from accessing the functions
 - The entry data will be validated to avoid the use of the services if the data is wrong
@@ -18,12 +19,16 @@ Due to time the endpoints and their operation are explained
 - PUT / user updates user data
 - GET / forms /: key dynamically returns the data of the necessary form
 - GET / calenders returns the list of calendars (JEDI STRESS MANAGEMENT, LIGHTSABER SKILLS, FIGHTING THE DARK SIDE) along with the schedules and the number of appointments by schedules
--GET calenders /: name, returns the dynamically armed calendar data
-- GET calenders /: name /: date returns all the appointments that are from that day (by default the date of the day will be used in the frontEnd)
-- POST calenders /: name /: date the schedule is sent and with that the record will be created in the table, the calendar values ​​will be validated first so as not to record more than the number of appointments per hour
-- GET calenders /: name /: date /: uuid, will bring the specific appointment (a uuid is generated to avoid writing a random value and bringing an external appointment), the data related to it and the user
-- PUT calenders /: name /: date /: uuid, the modification of the time will be sent, if it can be modified (it will seek to validate the date and time available with the base) it will also be validated if the appointment belongs to the user or in case of being an admin this validation will be eliminated
--DELETE calenders /: name /: date /: uuid the appointment will be logically deleted (delete true) to leave a record of it (for audit issues) this can be something that is deleted if not necessary, it is also validated if the quote belongs to user or if user is admin
+- GET / appoitment  gets all appoitment of the quotes
+- POST /appoitment  create an appointment list
+- PUT /:iDAppoitmentKey appoitment  update an appointment list
+- DELETE  /appoitment/:iDAppoitmentKey  logical delete an appointment list
+-GET calenders /: AppoitmentKey, returns the dynamically armed calendar data
+- GET calenders /: AppoitmentKey /: date returns all the appointments that are from that day (by default the date of the day will be used in the frontEnd)
+- POST calenders /: AppoitmentKey /: date the schedule is sent and with that the record will be created in the table, the calendar values ​​will be validated first so as not to record more than the number of appointments per hour
+- GET calenders /: AppoitmentKey /: date /: uuid, will bring the specific appointment (a uuid is generated to avoid writing a random value and bringing an external appointment), the data related to it and the user
+- PUT calenders /: AppoitmentKey /: date /: uuid, the modification of the time will be sent, if it can be modified (it will seek to validate the date and time available with the base) it will also be validated if the appointment belongs to the user or in case of being an admin this validation will be eliminated
+-DELETE calenders /: AppoitmentKey /: date /: uuid the appointment will be logically deleted (delete true) to leave a record of it (for audit issues) this can be something that is deleted if not necessary, it is also validated if the quote belongs to user or if user is admin
 - The corresponding notifications must be made each time a modification or a new record is made in the calendars
 
 # Practices that would improve the API (they will not be used for reasons of time)
