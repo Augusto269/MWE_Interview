@@ -18,9 +18,7 @@ exports.makeLogin = async function (req, res) {
           let hashedPassword = await commonsController.comparePassword(result.password,makeLogin.pass);
           if (hashedPassword) {
             // Login Successfully
-            console.log(result.profile);
             let profile = await serviceForms.getAllProfiles(result.profile)
-            console.log(profile);
             switch (profile[0].description) {
               case 'user':
                 var asignedProfile = process.env.USESR;
@@ -196,7 +194,7 @@ exports.adminAuth = function (req, res, next) {
       } else {
         let errorCode = 4999;
         commonsController.error_msg(errorCode, userData.language).then(result => {
-          res.status(200).send({
+          res.status(401).send({
             errorcode: errorCode,
             message: result.message,
             details: [],
@@ -239,7 +237,7 @@ exports.administratorAuth = function (req, res, next) {
       } else {
         let errorCode = 4999;
         commonsController.error_msg(errorCode, userData.language).then(result => {
-          res.status(200).send({
+          res.status(401).send({
             errorcode: errorCode,
             message: result.message,
             details: [],
@@ -281,7 +279,7 @@ exports.userAuth = function (req, res, next) {
       } else {
         let errorCode = 4999;
         commonsController.error_msg(errorCode, userData.language).then(result => {
-          res.status(200).send({
+          res.status(401).send({
             errorcode: errorCode,
             message: result.message,
             details: [],

@@ -1,0 +1,5 @@
+"id_error","error_code","language","message"
+1,2000,en,Login Succefully
+2,400,en,Not found
+3,500,en,Internal Error
+4,200,en,Succefully

@@ -41,9 +41,6 @@ export default function MenuAppBar() {
     setEasteregg(true)
     setSide(!side)
     playAudio(easteregg)
-
-    //Choose your S
-
   }
 
 

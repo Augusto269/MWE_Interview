@@ -126,7 +126,6 @@ exports.createRegisterError = function (error, uuid) {
 }
 
 exports.error_msg = function (error_code, language) {
-  console.log(error_code);
   return commonsServices.getErrorMsg(error_code, language)
     .then(result => {
       return result;

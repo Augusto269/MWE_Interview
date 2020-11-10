@@ -35,7 +35,6 @@ exports.newUser = async (req, res, next) => {
         }
     }
     catch (err) {
-        console.log(err)
         let errorCode = 500;
         commonsController.createRegisterError(err, userData.uuid);
         commonsController.error_msg(errorCode, 'en').then(result => {
@@ -47,5 +46,4 @@ exports.newUser = async (req, res, next) => {
             });
         });
     }
-
 }

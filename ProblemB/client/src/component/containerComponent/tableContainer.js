@@ -3,7 +3,7 @@ import SelectTable from '../JediSelector/SelectTable';
 import AppointmentTable from '../table/AppointmentTable';
 import Modal from '@material-ui/core/Modal';
 import { makeStyles } from '@material-ui/core/styles';
-import DateFnsUtils from '@date-io/date-fns'; // choose your lib
+import DateFnsUtils from '@date-io/date-fns'; 
 import {
     DateTimePicker,
   MuiPickersUtilsProvider,
@@ -12,7 +12,6 @@ import { Button } from '@material-ui/core';
 
 
 
-//"Time", "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
 function rand() {
     return Math.round(Math.random() * 20) - 10;
   }

@@ -1,0 +1,4 @@
+INSERT INTO heroku_dac327190e82a4c.users (UUID_User,name,lastname,DNI,phone,cuit,profile,address,last_login,last_logout,createdAt,updatedAt,created_user,updated_user,password,`user`) VALUES
+	 ('ea21b9c1-dfd5-45ee-a446-22c964f79038','Augusto','Godoy',37208505,NULL,NULL,'8cffd023-79fe-4409-bc67-37d93724c1ef',NULL,NULL,NULL,'2020-11-08',NULL,'Testing for new',NULL,'$2b$10$5xD/jx5mKmfK5ear/a.q.eH4b.1Rf1cyrFuyM7BSU.IwqDr4GxGw.','admin@gmail.com'),
+	 ('41607102-b303-4845-ac28-d2d174a05cbc','Augusto','Godoy',37208505,NULL,NULL,'2be7c9eb-a575-4c93-8863-641fe1ae2a46',NULL,NULL,NULL,'2020-11-08',NULL,'Testing for new',NULL,'$2b$10$uiooYo80jM2g8g4vZiN.bO5uQ5FDVKCzcFrSY6xriVx69vFrjIPWC','Augusto.093@gmail.com'),
+	 ('551e5106-1f3e-4452-8e2c-ecd3810dbdf5','Augusto','Godoy',37208505,NULL,NULL,'2be7c9eb-a575-4c93-8863-641fe1ae2a46',NULL,NULL,NULL,'2020-11-08',NULL,'Testing for new',NULL,'$2b$10$hJYcNxs1KpWFFZWDqg1U5e6fDim4ZG6HLbDvNvhtLDkr1Z5JQUdS2','user@gmail.com');
