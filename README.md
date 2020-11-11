@@ -19,6 +19,8 @@ The project was carried out in around 25-30 hours of programming
 (More description in the corresponding Reamde of each solution Server or CLient)
 
 live example : https://mew-client.herokuapp.com/
+User = user@gmail.com - Augusto.93123
+Admin = admin@gmail.com - Augusto.93123
 
 Content :
 - API REST made with NodeJs
