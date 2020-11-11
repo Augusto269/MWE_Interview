@@ -50,4 +50,4 @@ touch .env
 
 There is a .env file in the repository so you can connect and use the application
 
-there is an easteregg hidden in the have fun! app
+there is an easteregg hidden in the app, have fun! 
